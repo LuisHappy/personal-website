@@ -3,5 +3,5 @@
 
 	$sqlGet = "SELECT * FROM VIDEODATALINKS";
 	$results = mysqli_query($dbcon, $sqlGet) or die("Error getting info");
-	return $results;
+	echo $results;
 ?>

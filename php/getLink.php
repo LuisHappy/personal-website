@@ -3,8 +3,9 @@
 	// die('testing');
 
 	$sqlGet = "SELECT * FROM VIDEODATALINKS";
-	$query = mysql_query($dbcon, $sqlGet) or die("Error getting info");
-	// $results = mysql_fetch_assoc($query);
- //    echo json_encode($results);
-	// echo $results;
+	$query = mysqli_query($dbcon, $sqlGet) ;
+	// $results = mysqli_fetch_assoc($query);
+    // echo json_encode($results);
+    $results = mysqli_fetch_assoc($query);
+	print_r( $results );
 ?>

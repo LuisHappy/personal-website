@@ -1,5 +1,6 @@
 <?php 
 	include 'mysql_Connection.php';
+	die('testing');
 
 	$sqlGet = "SELECT * FROM VIDEODATALINKS";
 	$query = mysql_query($dbcon, $sqlGet) or die("Error getting info");

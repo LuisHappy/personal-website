@@ -24,12 +24,13 @@
 </html>
 <script src="scripts/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
+
 	$(document).ready(function () {
 		$("#home").addClass('active');
 
 		$.ajax({
 			url: "php/getLink.php",
-			method: 'GET',
+			method: 'POST',
 
 		}).done(function( response ){
 			console.log(response);

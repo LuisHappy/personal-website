@@ -29,8 +29,8 @@
 		$("#home").addClass('active');
 
 		$.ajax({
-			url: "http://luisgcamacho.com/php/getLink.php",
-			method: 'POST',
+			url: "php/getLink.php",
+			type: 'GET',
 
 		}).done(function( response ){
 			console.log(response);

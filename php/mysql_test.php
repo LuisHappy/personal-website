@@ -1,7 +1,7 @@
 <?php 
-	DEFINE ('DB_USER', 'websiteUser');
+	DEFINE ('DB_USER', 'root');
 	DEFINE ('DB_HOST', 'localhost');
-	DEFINE ('DB_PASS', 'lw885M9lO9GMmN9q');
+	DEFINE ('DB_PASS', 'password');
 	DEFINE ('DB_NAME', 'website');
 
 	$dbcon = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);

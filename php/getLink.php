@@ -3,7 +3,7 @@
 	// die('testing');
 
 	$sqlGet = "
-	SELECT * FROM VIDEODATALINKS
+	SELECT * FROM VIDEODATALINKS ORDER BY id DESC LIMIT 1;
 	";
 	$query = mysqli_query($dbcon, $sqlGet) ;
 	// $results = mysqli_fetch_assoc($query);

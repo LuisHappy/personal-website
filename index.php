@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php require_once 'config/getenv.php'; ?>
 <html>
 <head>
 	<title>Home - Luis Camacho</title>
@@ -7,9 +7,9 @@
 
 	<div id="navigation">
 		<nav class="topnav">
-			<a href="http://luisgcamacho.com/pages/contact.html" id="contact">Contact</a>
-	      	<a href="http://luisgcamacho.com/pages/work.html" id="work">Work</a>
-	      	<a href="http://luisgcamacho.com" id="home">Home</a>
+			<a href="/pages/contact.html" id="contact">Contact</a>
+	      	<a href="/pages/work.html" id="work">Work</a>
+	      	<a href="/" id="home">Home</a>
 		</nav>
 	</div>
 </head>
@@ -17,7 +17,8 @@
 	<div class="content">
 		<center>
 		<h3>Latest Work</h3>
-		<div id="video"></div>
+
+		<div id="video" class="container"></div>
 		</center>
 	</div>
 </body>
@@ -34,7 +35,7 @@
 
 		}).done(function( response ){
 			console.log(response);
-			var iframeInfo = '<iframe width="60%" height="720" src=" ' + response + ' " frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+			var iframeInfo = '<iframe class ="video" src=" ' + response + ' " frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 			$('#video').append(iframeInfo);
 		});
 	});

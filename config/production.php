@@ -1,1 +1,3 @@
-<?php echo "HELLO IM IN PRODUCTION"; ?>
+<?php 
+	DEFINE('APP_URL', 'http://luisgcamacho.com')
+?>

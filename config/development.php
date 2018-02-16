@@ -1,3 +1,3 @@
 <?php 
-	DEFINE('APP_URL', 'localhost/personal-website')
+	DEFINE('APP_URL', 'http://localhost/personal-website')
 ?>

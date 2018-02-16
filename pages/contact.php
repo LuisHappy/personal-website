@@ -1,17 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Works - Luis Camacho</title>
+  <title>Contact Me - Luis Camacho</title>
 
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-  <div id="navigation">
-    <nav class="topnav">
-      <a href="http://luisgcamacho.com/pages/contact.html" id="contact">Contact</a>
-      <a href="http://luisgcamacho.com/pages/work.html" id="work">Work</a>
-      <a href="http://luisgcamacho.com" id="home">Home</a>
-    </nav>
-  </div>
+  <?php require '../config/NavBar.php'; ?>
 </head>
 <body>
   <div class="content">

@@ -6,8 +6,8 @@
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  position: relative;right: 100px;
-  float: right;
+  position: relative;left: 100px;
+  float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;

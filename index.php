@@ -5,13 +5,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<div id="navigation">
-		<nav class="topnav">
-			<a href="/pages/contact.html" id="contact">Contact</a>
-	      	<a href="/pages/work.html" id="work">Work</a>
-	      	<a href="/" id="home">Home</a>
-		</nav>
-	</div>
+	<?php include 'config/NavBar.php'; ?>
 </head>
 <body>
 	<div class="content">

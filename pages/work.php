@@ -10,17 +10,27 @@
 <body>
 	<div class="content">
 		<center>
-			<h3>All Work</h3>
+			<h3>Photos</h3>
+			<iframe src="//lightwidget.com/widgets/e73029eb55545375bf04376e6289c76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 50%; border: 0; overflow: hidden;"></iframe>
+		</center>
+		<div class="clear"></div>
+		<center>
+			<h3>Videos</h3>
+			<div id="videoDiv"></div>
 		</center>
 	</div>
 </body>
 </html>
 
 <script src="../scripts/jquery-3.3.1.min.js"></script>
-<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/1548f0d83e9f5ba5a9fb11846a57f0f7.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 50%; border: 0; overflow: hidden;"></iframe>
+<script src="//lightwidget.com/widgets/lightwidget.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function () {
 		$("#work").addClass('active');
+
+		$.ajax({
+			
+		})
 	})
 </script>

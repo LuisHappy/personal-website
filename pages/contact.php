@@ -1,38 +1,81 @@
-
-<!DOCTYPE html>
-<html>
-<head>
   <title>Contact Me - Luis Camacho</title>
 
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 
   <?php require '../config/NavBar.php'; ?>
-</head>
-<body>
-  <div class="content">
-    <center>
-      <h3>Contact Me</h3>
-      <div>
-        <label>Email: </label>
-        <input type="textbox" name=""><br>
-      </div>
-      <div class="clear"><br></div>
-      <div>
-        <label>Subject: </label>
-        <input type="text" name="">
-      </div>
-      <div class="clear"><br></div>
-      <div>
-        <label>Message</label><br>
-        <textarea cols="40" rows="5"></textarea>
-      </div>
-    </center>
+  <div class="center">
+    <div class="content">
+      <center>
+        <h3>Contact Me</h3>
+        <div>
+          <label><p>Email</p></label>
+          <input type="text" id="email" placeholder="Enter your email..."><br>
+        </div>
+        <div class="clear"><br></div>
+        <div>
+          <label><p>Name</p></label>
+          <input type="text" id="name" placeholder="Enter your name..."><br>
+        </div>
+        <div class="clear"><br></div>
+        <div>
+          <label><p>Subject</p></label>
+          <input type="text" id="subject" placeholder="Enter subject...">
+        </div>
+        <div class="clear"><br></div>
+        <div>
+          <label><p>Message</p></label>
+          <textarea cols="40" rows="5" id="message" placeholder="Enter your message..."></textarea>
+        </div>
+        <div class="clear"></div>
+        <button id="emailSend">send email</button>
+        <div class="hidden" id="successMessage"><h1>Your message has been sent!</h1></div>
+        <div class="hidden" id="errorMessage"><h1>That's weird. Your message did not send please try again.</h1></div>
+        <div class="hidden" id="beingSent"><h1>Sending...</h1></div>
+      </center>
+    </div>
   </div>
-</body>
-</html>
-<script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function () {
-    $("#contact").addClass('active');
-  })
+  <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#contact").addClass('active');
+    })
+
+    $('#emailSend').on('click', function(){
+      
+      if ( !validateEmail($('#email').val()) )
+        return alert("The email that you have entered is not valid.");
+      else if ( $('#name').val() == '' )
+        return alert("Please enter a name");
+      else if ( $('#subject').val() == '' )
+        return alert("Please enter a subject");
+      else if ( $('#message').val() == '' )
+        return alert("The message cannot be left empty. Please enter a message.");
+
+      $('#beingSent').removeClass('hidden');
+
+
+
+      $.ajax({
+        url: "../php/sendEmail.php",
+        type: 'POST',
+        data: {
+          email: $("#email").val(),
+          name: $("#name").val(),
+          subject: $("#subject").val(),
+          message: $("#message").val(),
+        },
+      }).then( function(response) {
+        $('#beingSent').addClass('hidden');
+
+        if( response == 'true' )
+          $('#successMessage').removeClass('hidden');
+        else
+          $('#errorMessage').removeClass('hidden');
+      });
+    });
+
+    function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 </script>

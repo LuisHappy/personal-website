@@ -27,7 +27,7 @@
           <textarea cols="40" rows="5" id="message" placeholder="Enter your message..."></textarea>
         </div>
         <div class="clear"></div>
-        <button id="emailSend">send email</button>
+        <button id="emailSend">Send Email</button>
         <div class="hidden" id="successMessage"><h1>Your message has been sent!</h1></div>
         <div class="hidden" id="errorMessage"><h1>That's weird. Your message did not send please try again.</h1></div>
         <div class="hidden" id="beingSent"><h1>Sending...</h1></div>
@@ -40,8 +40,10 @@
       $("#contact").addClass('active');
     })
 
+    //When the button send email is clicked it will begin this function will then begin
     $('#emailSend').on('click', function(){
-      
+
+      //Checks to see if the email is valid and that none of the fields are blank.
       if ( !validateEmail($('#email').val()) )
         return alert("The email that you have entered is not valid.");
       else if ( $('#name').val() == '' )
@@ -51,10 +53,13 @@
       else if ( $('#message').val() == '' )
         return alert("The message cannot be left empty. Please enter a message.");
 
-      $('#beingSent').removeClass('hidden');
+
+      $('#beingSent').removeClass('hidden'); 
 
 
-
+      //After the first tests have passed it will then proceed to send the email using an
+      //Ajax call that goes to sendEmail.php. When it is done it will show a success 
+      //or error message
       $.ajax({
         url: "../php/sendEmail.php",
         type: 'POST',
@@ -65,6 +70,7 @@
           message: $("#message").val(),
         },
       }).then( function(response) {
+
         $('#beingSent').addClass('hidden');
 
         if( response == 'true' )
@@ -74,8 +80,9 @@
       });
     });
 
+    //Returns whether or not the email is valid using regex
     function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
 </script>

@@ -1,5 +1,7 @@
 <?php 
+	//Getting connection
 	include 'mysql_Connection.php';
+	//Query that will be used to return the latest video
 	$sqlGet = "
 	SELECT * FROM VIDEODATALINKS ORDER BY id DESC LIMIT 1;
 	";

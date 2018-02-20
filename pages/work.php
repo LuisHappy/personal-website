@@ -30,17 +30,25 @@
 	$(document).ready(function () {
 		$("#work").addClass('active');
 
+    // put all that "wl_alert" code here   
+
+		//This ajax call will return all of the videos that are in the database then
+		//append them to the page
 		$.ajax({
 			url: "../php/getAllVideos.php",
 			type: 'POST',
 			
 		}).then(function(response) {
-			var iframeInfo = '<iframe class ="videoBox" src="' + response + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-			$('#videoDiv').append(iframeInfo);
-		});
-		$('.videoContainer').fadeOut(0, function(){
-				$('.videoContainer').fadeIn(1500);
-				
+			$.each(JSON.parse(response), function( key, value ) {
+				var iframeInfo = '<iframe class ="videoBox" src="' + value + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+				$('#videoDiv').append(iframeInfo);
 			});
+		});
+
+		//Fades in both the photos from Instagram and the videos from YouTube after 
+		//1.5 seconds they will be completely visible
+		$('.videoContainer').fadeOut(0, function(){
+			$('.videoContainer').fadeIn(1500);
+		});
 	})
 </script>

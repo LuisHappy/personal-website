@@ -32,13 +32,13 @@
 }
 
 body{
-  background-color: #000000;
+  background-color: #FFFFFF;
   /*font-family: Areal, Helvetica, sans-serif;*/
     font-family:   Geneva, Tahoma, Verdana, sans-serif;
 }
 
 .content {
-  color: white;
+  color: black;
   position: relative;top: 40px;
 }
 
@@ -93,12 +93,19 @@ pre {
     /*padding-bottom: 56.25%;*/
 }
 .video {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 60%;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 70%;
 }
 .clear {
   clear: both;
+}
+
+.center {
+  background-color: #E0E0E0;
+  width: 70%;
+  margin: auto;
+  box-shadow: 1px 1px 15px 2px #888888;
 }

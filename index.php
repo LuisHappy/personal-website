@@ -22,7 +22,7 @@
 		$("#home").addClass('active');
 
 		$.ajax({
-			url: "php/getLink.php",
+			url: "<?php echo APP_URL ?>/php/getLink.php",
 			type: 'POST',
 
 		}).then(function( response ){

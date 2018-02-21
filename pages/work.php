@@ -35,7 +35,7 @@
 		//This ajax call will return all of the videos that are in the database then
 		//append them to the page
 		$.ajax({
-			url: "../php/getAllVideos.php",
+			url: "<?php echo APP_URL ?>/php/getAllVideos.php",
 			type: 'POST',
 			
 		}).then(function(response) {

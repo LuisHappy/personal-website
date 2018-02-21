@@ -63,7 +63,7 @@
       //Ajax call that goes to sendEmail.php. When it is done it will show a success 
       //or error message
       $.ajax({
-        url: "../php/sendEmail.php",
+        url: "<?php echo APP_URL ?>/php/sendEmail.php",
         type: 'POST',
         data: {
           email: $("#email").val(),

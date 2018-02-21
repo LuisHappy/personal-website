@@ -55,6 +55,8 @@
 
 
       $('#beingSent').removeClass('hidden'); 
+      $('#successMessage').addClass('hidden');
+      $('#errorMessage').addClass('hidden');
 
 
       //After the first tests have passed it will then proceed to send the email using an
@@ -77,6 +79,7 @@
           $('#successMessage').removeClass('hidden');
         else
           $('#errorMessage').removeClass('hidden');
+
       });
     });
 

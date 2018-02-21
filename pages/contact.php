@@ -62,15 +62,17 @@
       //After the first tests have passed it will then proceed to send the email using an
       //Ajax call that goes to sendEmail.php. When it is done it will show a success 
       //or error message
+      
       $.ajax({
         url: "<?php echo APP_URL ?>/php/sendEmail.php",
-        type: 'POST',
+        method: 'POST',
         data: {
           email: $("#email").val(),
           name: $("#name").val(),
           subject: $("#subject").val(),
           message: $("#message").val(),
-        },
+
+        }
       }).then( function(response) {
 
         $('#beingSent').addClass('hidden');

@@ -36,7 +36,7 @@
 		//append them to the page
 		$.ajax({
 			url: "<?php echo APP_URL ?>/php/getAllVideos.php",
-			type: 'POST',
+			type: 'GET',
 			
 		}).then(function(response) {
 			$.each(JSON.parse(response), function( key, value ) {

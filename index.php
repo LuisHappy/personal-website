@@ -23,7 +23,7 @@
 
 		$.ajax({
 			url: "<?php echo APP_URL ?>/php/getLink.php",
-			type: 'POST',
+			type: 'GET',
 
 		}).then(function( response ){
 			

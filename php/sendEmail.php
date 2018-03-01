@@ -19,8 +19,6 @@
 	$mail->Host = "smtp.gmail.com";
 	$mail->Port = 587; // or 587
 	$mail->IsHTML(true);
-	$mail->Username = "luiswebsite12@gmail.com";
-	$mail->Password = "ilov3mom";
 	$mail->SetFrom($_POST['email']);
 	$mail->Subject = $_POST['subject'];
 	$mail->Body = "This message is from: " . $_POST['email'] . "</br>Their name is: " . $_POST['name'] . "</br></br>This is their message</br>" . $_POST['message'];
